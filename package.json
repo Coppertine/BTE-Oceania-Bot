@@ -1,12 +1,12 @@
 {
-  "name": "bte-bot",
+  "name": "bte-oceania-bot",
   "version": "1.0.0",
-  "description": "For BTE Theme Parks Server. Gets server status. Also for BSA Robotics Merit Badge",
+  "description": "For BTE Oceania Server. Gets server status. Originally Created by MrSmarty",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "MrSmarty",
+  "author": "MrSmarty, Coppertine",
   "license": "ISC",
   "dependencies": {
     "better-sqlite3": "^7.1.0",
@@ -17,5 +17,14 @@
     "minecraft-server-util": "^1.3.0",
     "mysql": "^2.18.1",
     "node-gyp": "^7.1.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Coppertine/BTE-Oceania-Bot.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Coppertine/BTE-Oceania-Bot/issues"
+  },
+  "homepage": "https://github.com/Coppertine/BTE-Oceania-Bot#readme"
 }

@@ -1,14 +1,18 @@
 {
-    "botIconLink": "https://lh3.googleusercontent.com/m-oScS0Gl_-SDRUjlLyWDzdBxxiwoe5x9bc1TQQEsDZO3LazYspvvmvf680-KWzDjznU7wA7GGDQDlc_b81hIwdFL4L4zE2Lf1ZDgklHM5KfVL1xddYH1uxRYguQwgmDQXHio9He62_FCWmjgVZROtkGUC4bGvPzrrn5A9F3YHlkBGOpWZryb_2vENKpokiMY3_2elsbUg4o_y4W30EQwaDP9_4nZGegdcKh3q1hdf1Yh0USDIIY1QVXfPwF5xPUBozyi8MS8ohLiGKW85E1dgAmMmIPxdtPaztBqs9k4ZRD72kcYwv3JH2AJmbTbBIJ7OlcSZzzDJ2N_vdI6t5YryjbPgfUob_C4zydQ-klnBWzzGqXyamyy7M7uAchZ0bom1D3dDrI7Tv_-NUwCdUVEJYDxwzaPzaoX3zaE5yO8E4UX3VciUC6ubadOnsePm-_a06AbPhfoap2nHHrqZ9HQVV6tATcyC3RUw376O34oc9JclL4niH7tkKcmBomNTdJj9X63-nca7G2ixGJKO950gK2M7lT0ojuVCtUuKvZeb10KNrSKsDaS_Ji92jQ5vuPKoabVlY0WN1LojYS630lLKk1ON7dZAY-9ATZHR-Qt-2g-cK28s_XS7EiFacFD8WCE4Utei1NVIVyUz7zacBqjhpjHk5XNSq3MSEb4XkJ5v6fSWCHbpIx3AZyGYOi=s512-no?authuser=3",
-    "devIconLink": "https://media.discordapp.net/attachments/718967630169505883/749750897365614592/devIcon.png",
-    "commandUpdate": "2020-9-21",
-    "rolesUpdate": "2020-8-29",
-    "embedHexcode": "#60b0f4",
+    "botIconLink": "https://cdn.discordapp.com/attachments/741210134642163713/745520614546341948/unknown.png",
+    "devIconLink": "https://cdn.discordapp.com/avatars/196497984580616193/a33f40660b8c3bd985e3474577147e6d.png?size=512",
+    "commandUpdate": "2020-9-29",
+    "rolesUpdate": "2020-9-29",
+    "embedHexcode": "#1ad1ff",
     "emojis": {
-        "AltonTowers": "<:AltonTowers:705550277339644017>",
-        "Busch": "<:Busch:717839235788439572>",
-        "SixFlags": "<:SixFlags:731224218598899843>",
-        "Carowinds": "<:Carowinds:748790956979126292>",
-        "Canobie": "<:Canobie:749407387709997056>"
+        "QLD": "<:QLD:760369345179156480>",
+        "NSW": "<:NSW:760369345179156480>",
+        "OCEANIA": "<:OCEANIA:760369345179156480>",
+        "NZ": "<:NZ:760369345179156480>",
+        "NT": "<:NT:760369345179156480>",
+	"WA": "<:WA:760369345179156480>",
+	"SA": "<:SA:760369345179156480>",
+	"TAS": "<:TAS:760369345179156480>",
+	"bte_hug": "<:bte_hug:760374014953914399>"
     }
 }

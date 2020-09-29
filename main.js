@@ -3,14 +3,13 @@ const client = new Discord.Client({ partials : ["MESSAGE", "CHANNEL", "REACTION"
 const fs = require('fs');
 const ping = require("minecraft-server-util");
 const Enmap = require("enmap");
-const googleSpreadsheet = require('google-spreadsheet');
+
 const { promisify } = require('util');
 
 console.log('starting...');
 
 client.Discord = Discord;
 client.ping = ping;
-client.googleSpreadsheet = googleSpreadsheet;
 client.promisify = promisify;
 
 const config = require('./infoJsons/config.json');
@@ -19,12 +18,10 @@ const ids = require('./infoJsons/ids.json');
 client.ids = ids;
 const info = require('./infoJsons/info.json');
 client.info = info;
-const creds = require('./infoJsons/client_secret.json');
-client.creds = creds;
+//const creds = require('./infoJsons/client_secret.json');
+//client.creds = creds;
 const commandEmbeds = require('./infoJsons/commandEmbeds.json');
 client.commandEmbeds = commandEmbeds;
-const autoApp = require('./autoApp.js');
-client.autoApp = autoApp;
 
 const prefix = config.prefix;
 client.prefix = prefix;
@@ -43,19 +40,7 @@ function jsonReader(filePath, cb) {
    });
 }
 
-async function accessSpreadsheet(google, credentials) {
-   const doc = new google.GoogleSpreadsheet('1zcJgw_hUiewoMU8wDslTMHNdt-PvIuUJwfsMyH5E1Ho');
-   await doc.useServiceAccountAuth({
-         client_email: credentials.client_email,
-         private_key: credentials.private_key,
-      });
-   
-   await doc.loadInfo();
-   const sheet = doc.sheetsByIndex[0];
-   return sheet;
-}
 
-client.accessSpreadsheet = accessSpreadsheet;
 
 fs.readdir("./events/", (err, files) => {
     if (err) return console.error(err);
@@ -82,7 +67,7 @@ fs.readdir("./commands/", (err, files) => {
 });
 
 client.on("ready", () => {
-    console.log("BTE: Theme Parks BOT is online!");
+    console.log("BTE Oceania Bot is online!");
     client.user.setActivity('for =help', { type: 'WATCHING'})
     .then(console.log)
     .catch(console.error);
