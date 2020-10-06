@@ -50,7 +50,15 @@ module.exports = async (client, reaction, user) => {
     } else
 
     if (reaction.message.channel.id === '717832342550610113') {
-        if (reaction.emoji.id === '705550277339644017') {
+        switch(reaction.emoji.id)
+	{
+	  case '747053308258287716': // QLD
+	    await reaction.message.guild.members.cache.get(user.id).roles.add('741069141783347212');
+	    await reaction.message.guild.members.cache.get(user.id).send('QLD Role added!');
+	  default:
+	    break;
+	}
+	if (reaction.emoji.id === '705550277339644017') {
             await reaction.message.guild.members.cache.get(user.id).roles.add('709950515470925835');
         } else
         if (reaction.emoji.name === '🦁') {

@@ -2,14 +2,15 @@ module.exports = (client, message) => {
     if(message.webhookID && message.channel.id === '739239527431798805') return client.autoApp.run(client, message);
     if (message.author.bot) return;
 
-    if (message.channel.id !== '715017068772196424') {
+    const suggestionsChannel = '740865176760221757';
+    if (message.channel.id !== suggestionsChannel) {
         if (!message.content.startsWith(client.prefix)) return;
     };
 
-    if (message.channel.id === '715017068772196424') {
-        message.react('730466277390417930')
+    if (message.channel.id === suggestionsChannel) {
+        message.react('👍')
+        .then(() => message.react('👎'))
         .then(() => message.react('🤷‍♂️'))
-        .then(() => message.react('730466352430579813'))
         .catch(() => console.error('One of the emojis failed to react.'));
         return;
     }
