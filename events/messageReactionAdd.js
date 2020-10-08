@@ -53,11 +53,17 @@ module.exports = async (client, reaction, user) => {
         {
             case '747053308258287716': // QLD
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069141783347212');
-                await reaction.message.guild.members.cache.get(user.id).send('<:QLD:747053308258287716> QLD Role added!');
+                await reaction.message.guild.members.cache.get(user.id).send({ embed: {
+			title: 'QLD Role Added',
+			color: client.info.embedHexcode,
+			description: '<:QLD:747053308258287716> QLD Role added!'}});
 		break;
             case '747053308023144468': // NSWACT
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069181868310710');
-                await reaction.message.guild.members.cache.get(user.id).send('<:NSWACT:747053308023144468> NSW / ACT Role added!');
+                await reaction.message.guild.members.cache.get(user.id).send({ embed: {
+			title: 'NSW / ACT',
+			color: client.info.embedHexcode,
+			description: '<:NSWACT:747053308023144468> NSW / ACT Role added!'}});
                 break;
             case '747053307175895110': // NZ
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069531509686363');
@@ -92,8 +98,9 @@ module.exports = async (client, reaction, user) => {
 		console.log("got role");
                 await reaction.message.guild.members.cache.get(user.id).roles.remove(role1);
                 await reaction.message.guild.members.cache.get(user.id).send('Thank you, and welcome to BTE Oceania Build Team!');
-                await reaction.users.remove(user.id);
             }
+                await reaction.users.remove(user.id);
+
         }
     }
 }
