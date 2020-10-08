@@ -49,47 +49,52 @@ module.exports = async (client, reaction, user) => {
         .then(() => reaction.message.react('☑️'));
     } else
 
-    if (reaction.message.channel.id === '717832342550610113') {
+    if (reaction.message.channel.id === '741200772280090675') /* Role Select */ {
         switch(reaction.emoji.id)
-	{
-	  case '747053308258287716': // QLD
-	    await reaction.message.guild.members.cache.get(user.id).roles.add('741069141783347212');
-	    await reaction.message.guild.members.cache.get(user.id).send('QLD Role added!');
-	  default:
-	    break;
-	}
-	if (reaction.emoji.id === '705550277339644017') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709950515470925835');
-        } else
-        if (reaction.emoji.name === '🦁') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('740307771085422672');
-        } else
-        if (reaction.emoji.id === '717839235788439572') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709951008436125856');
-        } else
-        if (reaction.emoji.id === '748790956979126292') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('744380828464840835');
-        } else
-        if (reaction.emoji.name === '🐴') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709951457570324491');
-        } else
-        if (reaction.emoji.name === '🍫') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('715301522526699602');
-        } else
-        if (reaction.emoji.name === '👑') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('713431350027485284');
-        } else
-        if (reaction.emoji.name === '⛵') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709950648862638161');
-        } else
-        if (reaction.emoji.name === '🐋') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709950659473965146');
-        } else
-        if (reaction.emoji.id === '731224218598899843') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('709951358459183106');
-        } else
-        if (reaction.emoji.id === '749407387709997056') {
-            await reaction.message.guild.members.cache.get(user.id).roles.add('749407113117171882');
+        {
+            case '747053308258287716': // QLD
+                await reaction.message.guild.members.cache.get(user.id).roles.add('741069141783347212');
+                await reaction.message.guild.members.cache.get(user.id).send('<:QLD:747053308258287716> QLD Role added!');
+            case '747053308023144468': // NSWACT
+                await reaction.message.guild.members.cache.get(user.id).roles.add('741069181868310710');
+                await reaction.message.guild.members.cache.get(user.id).send('<:NSWACT:747053308023144468> NSW / ACT Role added!');
+                break;
+            case '747053307175895110': // NZ
+                const embed = new client.Discord.MessageEmbed()
+                .setTitle('NZ Role Added')
+                .setColor(client.info.embedHexcode)
+                .setDescription('<:NZ:747053307175895110> NZ Role added!');
+                await reaction.message.guild.members.cache.get(user.id).roles.add('741069531509686363');
+                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                break;
+            case '747053308237185074': // NT
+                const embed = new client.Discord.MessageEmbed()
+                .setTitle('NT Role Added')
+                .setColor(client.info.embedHexcode)
+                .setDescription('<:NT:747053308237185074> NT Role added!');
+                await reaction.message.guild.members.cache.get(user.id).roles.add('741069460147798038');
+                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                break;
+            case '747053308044378112': // WA
+                const embed = new client.Discord.MessageEmbed()
+                    .setTitle('WA Role Added')
+                    .setColor(client.info.embedHexcode)
+                    .setDescription('<:WA:747053308044378112> WA Role added!');
+                await reaction.message.guild.members.cache.get(user.id).roles.add('741069460147798038');
+                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                break;
+            default:
+                break;
+        }
+    } else if (reaction.message.channel.id === '740865157189861437') /* Rules */ {
+        if(reaction.emoji.id === '🚪') // User accepted rules, can remove role.
+        {
+            const role1 = reaction.message.guild.members.cache.get(user.id).roles.find(role => role.name === 'Unverified');
+            if (role1) { 
+                await reaction.message.guild.members.cache.get(user.id).removeRole(role1);
+                await reaction.message.guild.members.cache.get(user.id).send('Thank you, and welcome to BTE Oceania Build Team!');
+                await reaction.users.remove(user.id);
+            }
         }
     }
 }
