@@ -47,50 +47,49 @@ module.exports = async (client, reaction, user) => {
 
         reaction.message.reactions.removeAll().catch(error => console.error('Failed to clear reactions: ', error))
         .then(() => reaction.message.react('☑️'));
-    } else
-
-    if (reaction.message.channel.id === '741200772280090675') /* Role Select */ {
+    }
+   if (reaction.message.channel.id === '741200772280090675') /* Role Select */ {
         switch(reaction.emoji.id)
         {
             case '747053308258287716': // QLD
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069141783347212');
                 await reaction.message.guild.members.cache.get(user.id).send('<:QLD:747053308258287716> QLD Role added!');
+		break;
             case '747053308023144468': // NSWACT
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069181868310710');
                 await reaction.message.guild.members.cache.get(user.id).send('<:NSWACT:747053308023144468> NSW / ACT Role added!');
                 break;
             case '747053307175895110': // NZ
-                const embed = new client.Discord.MessageEmbed()
-                .setTitle('NZ Role Added')
-                .setColor(client.info.embedHexcode)
-                .setDescription('<:NZ:747053307175895110> NZ Role added!');
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069531509686363');
-                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                await reaction.message.guild.members.cache.get(user.id).send({ embed: {title:'NZ Role Added',
+			color: client.info.embedHexcode,
+			description: '<:NZ:747053307175895110> NZ Role added!'}});
                 break;
             case '747053308237185074': // NT
-                const embed = new client.Discord.MessageEmbed()
-                .setTitle('NT Role Added')
-                .setColor(client.info.embedHexcode)
-                .setDescription('<:NT:747053308237185074> NT Role added!');
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069460147798038');
-                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                await reaction.message.guild.members.cache.get(user.id).send({embed: {
+	                title: 'NT Role Added',
+	                color: client.info.embedHexcode,
+        	        description: '<:NT:747053308237185074> NT Role added!'}});
                 break;
             case '747053308044378112': // WA
-                const embed = new client.Discord.MessageEmbed()
-                    .setTitle('WA Role Added')
-                    .setColor(client.info.embedHexcode)
-                    .setDescription('<:WA:747053308044378112> WA Role added!');
                 await reaction.message.guild.members.cache.get(user.id).roles.add('741069460147798038');
-                await reaction.message.guild.members.cache.get(user.id).send(embed);
+                await reaction.message.guild.members.cache.get(user.id).send({ embed: {
+			title: 'WA Role Added',
+			color: client.info.embedHexcode,
+	                description: '<:WA:747053308044378112> WA Role added!'}});
                 break;
             default:
                 break;
         }
-    } else if (reaction.message.channel.id === '740865157189861437') /* Rules */ {
-        if(reaction.emoji.id === '🚪') // User accepted rules, can remove role.
+    } 
+    if (reaction.message.channel.id === '740865157189861437') /* Rules */ {
+        if(reaction.emoji.name === '🚪') // User accepted rules, can remove role.
         {
-            const role1 = reaction.message.guild.members.cache.get(user.id).roles.find(role => role.name === 'Unverified');
+	   console.log("got door");
+            const role1 = reaction.message.guild.roles.get('742282165064302613');
             if (role1) { 
+		console.log("got role");
                 await reaction.message.guild.members.cache.get(user.id).removeRole(role1);
                 await reaction.message.guild.members.cache.get(user.id).send('Thank you, and welcome to BTE Oceania Build Team!');
                 await reaction.users.remove(user.id);
