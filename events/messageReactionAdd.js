@@ -144,7 +144,7 @@ module.exports = async (client, reaction, user) => {
         if(reaction.emoji.name === '🚪') // User accepted rules, can remove role.
         {
             const role1 = reaction.message.guild.roles.cache.get('742282165064302613');
-            if (role1) { 
+            if (reaction.message.guild.members.cache.get(user.id).roles.cache.some((role) => role.name === 'Unverified')) {
                 await reaction.message.guild.members.cache.get(user.id).roles.remove(role1);
                 await reaction.message.guild.members.cache.get(user.id).send('Thank you, and welcome to BTE Oceania Build Team!');
             }

@@ -5,7 +5,7 @@ module.exports = async (client, reaction, user) => {
     if (user.bot) return;
     if (!reaction.message.guild) return;
 
-    if (reaction.message.channel.id === '717832342550610113') {
+    if (reaction.message.channel.id === '741200772280090675') {
         switch(reaction.emoji.id)
         {
             case '747053308258287716': // QLD
