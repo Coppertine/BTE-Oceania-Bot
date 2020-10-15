@@ -130,6 +130,7 @@ module.exports = async (client, reaction, user) => {
 	                description: '<:VIC:747053308451225620> VIC Role added!'}});
                 break;
             case '763033430056632370': // Theme Parks
+                console.log("adding in Theme Parks");
                 await reaction.message.guild.members.cache.get(user.id).roles.add('762917178814103553');
                 await reaction.message.guild.members.cache.get(user.id).send({ embed: {
 			        title: 'Theme Parks Role Added',
