@@ -1,10 +1,10 @@
 exports.run = (client, message, args) => {
         const embed = new client.Discord.MessageEmbed()
-        .setTitle('BTE Oceania | Role Menu')
+        .setTitle("BTE Oceania | Role Menu")
         .setColor(client.info.embedHexcode)
-		.setDescription('React below to select your roles')
+		.setDescription("React below to select your roles")
 		.addFields(
-			{name: "<:ISLANDS:762919253447147591>", value: 'Islands'},
+			{name: "<:ISLANDS:762919253447147591>", value: "Islands"},
 			{name: "<:NSWACT:747053308023144468>", value: "New South Wales / Australian Capital Territory"},
 			{name: "<:VIC:747053308451225620>", value: "Victoria"}, 
 			{name: "<:QLD:747053308258287716>", value: "Queensland"},
@@ -17,20 +17,20 @@ exports.run = (client, message, args) => {
 			{name: "<:FIJI:762915121486888980>", value: "Fiji"},
 			{name: "<:ThemeParks:763033430056632370>", value: "BTE Theme Parks"}
 		);
-	if(message.channel.id === '741200772280090675')
+	if(message.channel.id === "741200772280090675")
 	{
             message.channel.send(embed).then(sentEmbed => {
-				sentEmbed.react('<:ISLANDS:762919253447147591>');
-				sentEmbed.react('<:QLD:747053308258287716>');
-				sentEmbed.react('<:NZ:747053307175895110>'); 
-				sentEmbed.react('<:NT:747053308237185074>'); 
-				sentEmbed.react('<:WA:747053308044378112>'); 
-				sentEmbed.react('<:SA:747053308413345833>'); 
-				sentEmbed.react('<:TAS:747053308048572447>'); 
-				sentEmbed.react('<:PNG:762915110083362846>');
-				sentEmbed.react('<:FIJI:762915121486888980>');
-				sentEmbed.react('<:VIC:747053308451225620>'); 
-				sentEmbed.react('<:ThemeParks:763033430056632370>');
+				sentEmbed.react("762919253447147591");
+				sentEmbed.react("747053308258287716");
+				sentEmbed.react("747053307175895110"); 
+				sentEmbed.react("747053308237185074"); 
+				sentEmbed.react("747053308044378112"); 
+				sentEmbed.react("747053308413345833"); 
+				sentEmbed.react("747053308048572447"); 
+				sentEmbed.react("762915110083362846");
+				sentEmbed.react("762915121486888980");
+				sentEmbed.react("747053308451225620"); 
+				sentEmbed.react("763033430056632370");
 	    	});
 	    return;
 	} else {
