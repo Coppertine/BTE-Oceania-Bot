@@ -11,9 +11,9 @@ exports.run = (client, message, args) => {
         const commandEmbed = new client.Discord.MessageEmbed()
         .setTitle("Available Commands: `DEV`")
         .setColor(client.info.embedHexcode)
-        .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=players** \n **=score** \n **=modSay** \n **=devCommand** (TEST) \n **=modCommand** (TEST) \n **=reload** \n **=app**')
+        .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=modSay** \n **=devCommand** (TEST) \n **=modCommand** (TEST) \n **=reload** \n **=verify** \n **=regionroles')
         .setTimestamp(client.info.commandUpdate)
-        .setFooter("Last updated by MrSmarty#1732", client.info.devIconLink);
+        .setFooter("Last updated by Coppertine#1718", client.info.devIconLink);
         message.channel.send(commandEmbed);
         return;
     } else
@@ -23,7 +23,7 @@ exports.run = (client, message, args) => {
         .setColor(client.info.embedHexcode)
         .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=players** \n **=score** \n **=modSay** \n **=adminCommand** (TEST) \n **=modCommand** (TEST) \n **=reactions** \n **=app**')
         .setTimestamp(client.info.commandUpdate)
-        .setFooter("Last updated by MrSmarty#1732", client.info.devIconLink);
+        .setFooter("Last updated by Coppertine#1718", client.info.devIconLink);
         message.channel.send(commandEmbed);
         return;
     } else
@@ -33,16 +33,16 @@ exports.run = (client, message, args) => {
         .setColor(client.info.embedHexcode)
         .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=players** \n **=score** \n **=modSay** \n **=modCommand** (TEST) \n **=app**')
         .setTimestamp(client.info.commandUpdate)
-        .setFooter("Last updated by MrSmarty#1732", client.info.devIconLink);
-        message.channel.send(commandEmbed);
+        .setFooter("Last updated by Coppertine#1718", client.info.devIconLink);
+        message.member.send(commandEmbed);
         return;
     } else {
         const commandEmbed = new client.Discord.MessageEmbed()
         .setTitle("Available Commands")
         .setColor(client.info.embedHexcode)
-        .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=players** \n **=score**')
+        .setDescription('**=help** \n**=ping** \n **=commands** \n **=server** \n **=modpack** \n **=apply**')
         .setTimestamp(client.info.commandUpdate)
-        .setFooter("Last updated by MrSmarty#1732", client.info.devIconLink);
+        .setFooter("Last updated by Coppertine#1718", client.info.devIconLink);
         message.channel.send(commandEmbed);
     }
 };
