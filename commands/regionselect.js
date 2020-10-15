@@ -21,6 +21,7 @@ exports.run = (client, message, args) => {
 	{
             message.channel.send(embed).then(sentEmbed => {
 				sentEmbed.react("762919253447147591");
+				sentEmbed.react("747053308023144468");
 				sentEmbed.react("747053308258287716");
 				sentEmbed.react("747053307175895110"); 
 				sentEmbed.react("747053308237185074"); 
