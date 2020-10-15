@@ -30,7 +30,7 @@ exports.run = (client, message, args) => {
 				sentEmbed.react("762915110083362846");
 				sentEmbed.react("762915121486888980");
 				sentEmbed.react("747053308451225620"); 
-				sentEmbed.react("763033430056632370");
+				sentEmbed.react("763033430056632370"); 
 	    	});
 	    return;
 	} else {
