@@ -3,12 +3,12 @@ module.exports = async (client, member) => {
     const memberCount = guild.members.cache.filter(member => !member.user.bot).size;
     const welcomeChannel = client.channels.cache.get('740865155243704412');
     
-    welcomeChannel.send(member.tag);
+    welcomeChannel.send("${member}");
     welcomeChannel.send({ embed: {
         title: 'Welcome!',
         color: client.info.embedHexcode,
-        description: member.tag,
-        thumbnail: member.avatar,
+        description: "${member}",
+        //thumbnail: member.avatarURL(),
         fields: [
             {
                 title:'\u200b',
@@ -22,7 +22,8 @@ module.exports = async (client, member) => {
                 title:'\u200b',
                 description: 'You are the ${memberCount}th member!'
             }
-        ]}});
+        ]
+    }});
     
     
     client.channels.cache.get('746584674180268073').setName(`👫 All Members: ${memberCount}`);
