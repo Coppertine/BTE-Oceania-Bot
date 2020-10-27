@@ -153,4 +153,7 @@ module.exports = async (client, reaction, user) => {
 
         }
     }
+    if (reaction.message.channel.id === '747252567624646798') /* Pings */ {
+        
+    }
 }
