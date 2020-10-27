@@ -8,7 +8,7 @@ module.exports = async (client, member) => {
         title: 'Welcome!',
         color: client.info.embedHexcode,
         description: member.toString(),
-        thumbnail: { url: member.displayAvatarURL({dynamic:true})},
+        thumbnail: { url: member.avatarURL()},
         fields: [
             {
                 name:'\u200b',
