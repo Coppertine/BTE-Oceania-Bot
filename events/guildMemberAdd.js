@@ -8,7 +8,9 @@ module.exports = async (client, member) => {
         title: 'Welcome!',
         color: client.info.embedHexcode,
         description: member.toString(),
-        thumbnail: { url: member.avatarURL},
+        thumbnail: { 
+            url: member.displayAvatarURL(), 
+        },
         fields: [
             {
                 name:'\u200b',
@@ -20,7 +22,7 @@ module.exports = async (client, member) => {
             },
             {
                 name:'\u200b',
-                value: 'You are the ${memberCount}th member!'
+                value: 'You are the '+ memberCount + 'th member!'
             }
         ]
     }});
