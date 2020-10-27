@@ -9,7 +9,7 @@ module.exports = async (client, member) => {
         color: client.info.embedHexcode,
         description: member.toString(),
         thumbnail: { 
-            url: member.displayAvatarURL(), 
+            url: member.user.displayAvatarURL(), 
         },
         fields: [
             {
