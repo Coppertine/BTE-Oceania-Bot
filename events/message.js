@@ -8,6 +8,9 @@ module.exports = (client, message) => {
     };
 
     if (message.channel.id === suggestionsChannel) {
+        if (!message.content.startsWith('**#')) {
+            return message.delete().then(() => message.channel.send('Please Number your suggestion in the format ```**#number** \nsuggestion \ncontent```.').then(msg => {msg.delete({ timeout: 7500 })}))
+        }
         message.react('👍')
         .then(() => message.react('👎'))
         .then(() => message.react('🤷‍♂️'))
