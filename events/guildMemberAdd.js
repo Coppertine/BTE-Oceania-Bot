@@ -3,11 +3,11 @@ module.exports = async (client, member) => {
     const memberCount = guild.members.cache.filter(member => !member.user.bot).size;
     const welcomeChannel = client.channels.cache.get('740865155243704412');
     
-    welcomeChannel.send("${member}");
+    welcomeChannel.send(member.toString());
     welcomeChannel.send({ embed: {
         title: 'Welcome!',
         color: client.info.embedHexcode,
-        description: "${member}",
+        description: member.toString(),
         //thumbnail: member.avatarURL(),
         fields: [
             {
