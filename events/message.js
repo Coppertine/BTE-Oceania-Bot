@@ -18,14 +18,27 @@ module.exports = (client, message) => {
         return;
     }
 
-    if (message.channel.name == undefined) return;
+    //if (message.channel.name == undefined) return;
+    if (message.channel.type == 'dm') {
+        if(message.content.startsWith("="))
+        {
+            const args = message.content.slice(1).trim().split(/ +/g);
+            const command = args.shift().toLowerCase();
 
-    const args = message.content.slice(1).trim().split(/ +/g);
-    const command = args.shift().toLowerCase();
+            const cmd = client.dmcommands.get(command);
 
-    const cmd = client.commands.get(command);
+            if (!cmd) return;
 
-    if (!cmd) return;
+            cmd.run(client, message, args);
+        }
+    } else {
+        const args = message.content.slice(1).trim().split(/ +/g);
+        const command = args.shift().toLowerCase();
 
-    cmd.run(client, message, args);
+        const cmd = client.commands.get(command);
+
+        if (!cmd) return;
+
+        cmd.run(client, message, args);
+    }
 };
