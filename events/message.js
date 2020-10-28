@@ -3,11 +3,13 @@ module.exports = (client, message) => {
     if (message.author.bot) return;
 
     const suggestionsChannel = '740865176760221757';
+    const staffSuggestionsChannel = '740863869215309844';
+    const staffPolls = '753226065199104121';
     if (message.channel.id !== suggestionsChannel) {
         if (!message.content.startsWith(client.prefix)) return;
     };
 
-    if (message.channel.id === suggestionsChannel) {
+    if (message.channel.id === suggestionsChannel || message.channel.id === staffSuggestionsChannel) {
         if (!message.content.startsWith('**#')) {
             return message.delete().then(() => message.channel.send('Please Number your suggestion in the format ```**#number** \nsuggestion \ncontent```.').then(msg => {msg.delete({ timeout: 7500 })}))
         }
@@ -18,6 +20,15 @@ module.exports = (client, message) => {
         return;
     }
 
+    if(message.channel.id === staffPolls)
+    {
+        message.react('👍')
+        .then(() => message.react('👎'))
+        .then(() => message.react('🤷‍♂️'))
+        .catch(() => console.error('One of the emojis failed to react.'));
+        return;
+    }
+    
     //if (message.channel.name == undefined) return;
     if (message.channel.type == 'dm') {
         if(message.content.startsWith("="))
