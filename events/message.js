@@ -5,6 +5,7 @@ module.exports = (client, message) => {
     const suggestionsChannel = '740865176760221757';
     const staffSuggestionsChannel = '770914068579090453';
     const staffPolls = '753226065199104121';
+    const meetingPolls = '772375515461451796';
     if (message.channel.id !== suggestionsChannel 
         && message.channel.id !== staffSuggestionsChannel
         && message.channel.id !== staffPolls) {
@@ -33,7 +34,7 @@ module.exports = (client, message) => {
         return;
     }
 
-    if(message.channel.id === staffPolls)
+    if(message.channel.id === staffPolls || message.channel.id === meetingPolls)
     {
         message.react('👍')
         .then(() => message.react('👎'))
@@ -42,20 +43,20 @@ module.exports = (client, message) => {
         return;
     }
 
-    //if (message.channel.name == undefined) return;
-    if (message.channel.type == 'dm') {
-        if(message.content.startsWith("="))
-        {
-            const args = message.content.slice(1).trim().split(/ +/g);
-            const command = args.shift().toLowerCase();
+    if (message.channel.name == undefined) return;
+    //if (message.channel.type == 'dm') {
+    //     if(message.content.startsWith("="))
+    //     {
+    //         const args = message.content.slice(1).trim().split(/ +/g);
+    //         const command = args.shift().toLowerCase();
 
-            const cmd = client.dmcommands.get(command);
+    //         const cmd = client.dmcommands.get(command);
 
-            if (!cmd) return;
+    //         if (!cmd) return;
 
-            cmd.run(client, message, args);
-        }
-    } else {
+    //         cmd.run(client, message, args);
+    //     }
+    // } else {
         const args = message.content.slice(1).trim().split(/ +/g);
         const command = args.shift().toLowerCase();
 
@@ -64,5 +65,5 @@ module.exports = (client, message) => {
         if (!cmd) return;
 
         cmd.run(client, message, args);
-    }
+//    }
 };
