@@ -1,8 +1,11 @@
 module.exports = async (client, member) => {
+    if(member.guild.id === '740864442836713483'){
     const guild = member.guild;
     const memberCount = guild.members.cache.filter(member => !member.user.bot).size;
     const welcomeChannel = client.channels.cache.get('740865155243704412');
     
+    const role1 = reaction.message.guild.roles.cache.get('742282165064302613');
+    await reaction.message.guild.members.cache.get(user.id).roles.add(role1);
     welcomeChannel.send(member.toString());
     welcomeChannel.send({ embed: {
         title: 'Welcome to Oceania Build Team!',
@@ -30,4 +33,5 @@ module.exports = async (client, member) => {
     
     
     client.channels.cache.get('746584674180268073').setName(`👫 All Members: ${memberCount}`);
+}
 }
