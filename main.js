@@ -66,17 +66,17 @@ fs.readdir("./commands/", (err, files) => {
     });
 });
 
-fs.readdir("./dmcommands/",
- (err, files) => {
-    if (err) return console.error(err);
-    files.forEach(file => {
-        if (!file.endsWith(".js")) return;
-        let props = require(`./dmcommands/${file}`);
-        let commandName = file.split(".")[0];
-        console.log(`Attempting to load command ${commandName}`);
-        client.dmcommands.set(commandName, props);
-    });
-});
+// fs.readdir("./dmcommands/",
+//  (err, files) => {
+//     if (err) return console.error(err);
+//     files.forEach(file => {
+//         if (!file.endsWith(".js")) return;
+//         let props = require(`./dmcommands/${file}`);
+//         let commandName = file.split(".")[0];
+//         console.log(`Attempting to load command ${commandName}`);
+//         client.dmcommands.set(commandName, props);
+//     });
+// });
 
 client.on("ready", () => {
     console.log("BTE Oceania Bot is online!");

@@ -4,7 +4,7 @@ module.exports = async (client, member) => {
         const memberCount = guild.members.cache.filter(member => !member.user.bot).size;
         const welcomeChannel = client.channels.cache.get('740865155243704412');
         
-        const role1 = reaction.message.guild.roles.cache.get('742282165064302613');
+        const role1 = guild.roles.cache.get('742282165064302613');
         await reaction.message.guild.members.cache.get(user.id).roles.add(role1);
         welcomeChannel.send(member.toString());
         welcomeChannel.send({ embed: {
