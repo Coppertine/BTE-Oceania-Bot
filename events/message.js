@@ -34,8 +34,16 @@ module.exports = (client, message) => {
         return;
     }
 
-    if(message.channel.id === staffPolls || message.channel.id === meetingPolls)
+    if(message.channel.id === staffPolls)
     {
+        message.react('👍')
+        .then(() => message.react('👎'))
+        .then(() => message.react('🤷‍♂️'))
+        .catch(() => console.error('One of the emojis failed to react.'));
+        return;
+    }
+
+    if(message.channel.id === meetingPolls) {
         message.react('👍')
         .then(() => message.react('👎'))
         .then(() => message.react('🤷‍♂️'))
