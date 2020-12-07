@@ -8,7 +8,8 @@ module.exports = (client, message) => {
     const meetingPolls = '772375515461451796';
     if (message.channel.id !== suggestionsChannel 
         && message.channel.id !== staffSuggestionsChannel
-        && message.channel.id !== staffPolls) {
+        && message.channel.id !== staffPolls
+        && message.channel.id !== meetingPolls) {
         if (!message.content.startsWith(client.prefix)) return;
     };
 

@@ -95,5 +95,6 @@ module.exports = async (client, reaction, user) => {
             default:
                 break;
         }
+        //displayRoles(reaction.message.guild.members.cache.get(user.id));
     }
 }

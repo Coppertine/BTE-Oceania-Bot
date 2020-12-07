@@ -26,6 +26,8 @@ client.commandEmbeds = commandEmbeds;
 const prefix = config.prefix;
 client.prefix = prefix;
 
+//const { renderRoles } = require('./')
+
 function jsonReader(filePath, cb) {
    fs.readFile(filePath, (err, fileData) => {
        if (err) {
